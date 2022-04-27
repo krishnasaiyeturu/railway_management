@@ -41,16 +41,18 @@
                 <!-- nav -->
                 <nav class="py-4">
                     <div id="logo">
-                        <h1> <a href="{% url 'index' %}">Railway</a></h1>
+                        <h1> <a href="{% url 'index' %}">Amtrak</a></h1>
                     </div>
 
                     <label for="drop" class="toggle">Menu</label>
                     <input type="checkbox" id="drop" />
                     <ul class="menu mt-2">
                         {% block navbar %}
-                        <li {% block navbar-home %}{% endblock %}><a href="{% url 'index' %}">Home</a></li>
-                        <li {% block navbar-pnr-status %}{% endblock %}><a href="{% url 'pnr-status' %}">PNR Status</a></li>
+                        <!-- <li {% block navbar-home %}{% endblock %}><a href="{% url 'index' %}">Home</a></li> -->
+
                         <!-- <li {% block navbar-live-status %}{% endblock %}><a href="{% url 'live-status' %}">Live Status</a></li> -->
+
+                        {% if user.is_authenticated %}
                         <li {% block navbar-book-ticket %}{% endblock %}><a href="{% url 'book-ticket' %}">Book Ticket</a></li>
                         <li {% block navbar-train-enquiry %}{% endblock %}>
                             <!-- First Tier Drop Down -->
@@ -62,16 +64,12 @@
                                 <li {% block navbar-train-schedule %}{% endblock %}><a href="{% url 'train-schedule' %}">Train Schedule</a></li>
                             </ul>
                         </li>
-                        {% if user.is_authenticated %}
+                        <li {% block navbar-pnr-status %}{% endblock %}><a href="{% url 'pnr-status' %}">PNR Status</a></li>
                         <li {% block navbar-transactions %}{% endblock %}>
-                            <label for="drop-2" class="toggle" style=>My Transactions <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
-                            <a href="{% url 'transactions' %}">My Transactions <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-                            <input type="checkbox" id="drop-2" />
-                            <ul>
-                                <li {% block navbar-last-transaction %}{% endblock %}><a href="{% url 'last-transaction' %}">Last Transaction Detail</a></li>
-                                <li {% block navbar-booked-history %}{% endblock %}><a href="{% url 'booked-history' %}">Booked Ticket History</a></li>
-                                <li {% block navbar-cancellation-history %}{% endblock %}><a href="{% url 'cancelled-history' %}">Ticket Cancellation History</a></li>
-                            </ul>
+
+                            <a href="{% url 'booked-history' %}">Booked History</a>
+
+
                         </li>
                         <li {% block navbar-profile %}{% endblock %}>
 
@@ -91,7 +89,7 @@
                         </li>
                         {% else %}
                         <li {% block navbar-login %}{% endblock %}><a href="{% url 'login' %}">Login</a></li>
-                        <li {% block navbar-register %}{% endblock %}><a href="{% url 'register' %}">Register</a></li>
+                        <li {% block navbar-register %}{% endblock %}><a href="{% url 'register' %}">Sign up</a></li>
                         {% endif %}
                         {% endblock %}
                     </ul>

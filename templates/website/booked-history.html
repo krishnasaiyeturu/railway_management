@@ -10,11 +10,6 @@
 
 {% block content %}
 
-<ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
-    <li class="breadcrumb-item active"><a href="{% url 'transactions' %}">My Transactions</a></li>
-    <li class="breadcrumb-item active">Booked Ticket History</li>
-</ol>
 
 {% for t in all_tickets %}
 <div class="container">
@@ -31,17 +26,17 @@
                     <!-- Oct <br>2019 -->
                 </div>
             </div>
-            <div class="col-md-12" style="font-size:25px; color:#228B22; transform: rotate(-5deg);">
+            <!-- <div class="col-md-12" style="font-size:25px; color:#228B22; transform: rotate(-5deg);">
                 <b>Booked</b>
-            </div>
+            </div> -->
         </div>
-        <div class="col-md-10" style="font-size:15px">
+        <div class="col-md-12" style="font-size:15px">
             <div class="row">
                 <div class="col-md-5">PNR Number: &nbsp;
                 <span><b>{{ t.ticket.pnr }}</b></span>
                 </div>
                 <div class="col-md-1"></div>
-                <div class="col-md-5">Transaction ID: &nbsp;
+                <div class="col-md-5">Ticket ID: &nbsp;
                 <span><b>{{ t.ticket.transaction_id }}</b></span>
                 </div>
             </div>
@@ -81,15 +76,7 @@
                 <span><b>&#8377; {{ t.ticket.amount }}</b></span>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-5">Quota: &nbsp;
-                <span><b>GEN</b></span>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-5">Ticket Type: &nbsp;
-                <span><b>E-Ticket</b></span>
-                </div>
-            </div>
+
             <br>
             <table class="table table-sm">
                 <thead>
@@ -117,8 +104,7 @@
         <table class="table table-borderless">
             <tbody>
                 <tr>
-                    <td align="right" style="width:50%;"><button type="button" class="btn btn-primary btn-sm" data-target="#cancelTicket_modal-{{t.ticket.pnr}}" data-toggle="modal">Cancel Ticket</button></td>
-                    <!-- <td align="left"><button type="button" class="btn btn-primary btn-sm">Print E-Ticket</button></td> -->
+                    
                 </tr>
             </tbody>
         </table>

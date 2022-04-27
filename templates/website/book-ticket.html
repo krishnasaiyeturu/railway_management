@@ -4,14 +4,10 @@
 {% block title %} Ticket Booking {% endblock %}
 {% block navbar-book-ticket %}class="active"{% endblock %}
 
-{% block banner %} main-banner inner {% endblock %}
+
 {% load static %}
 {% block content %}
 
-<ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
-    <li class="breadcrumb-item active">Book Ticket</li>
-</ol>
 
 <!-- train between stations form -->
 <div class="section text-center py-5">
@@ -66,7 +62,7 @@
                                 </div>
                                 <div class="row mt-4 justify-content-center">
                                     <div class="col-md-4 col-sm-4 col-xs-4 controls">
-                                        <button type="submit" id="btn-train-search" class="btn active">Submit</button>
+                                        <button type="submit" id="btn-train-search" class="btn active">Book</button>
                                     </div>
                                 </div>
                             </div>

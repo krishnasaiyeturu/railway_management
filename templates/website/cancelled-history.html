@@ -6,15 +6,11 @@
 {% block navbar-last-transaction %}class="inactive"{% endblock %}
 {% block navbar-booked-history %}class="inactive"{% endblock %}
 
-{% block banner %} main-banner inner {% endblock %}
+
 
 {% block content %}
 
-<ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
-    <li class="breadcrumb-item active"><a href="{% url 'transactions' %}">My Transactions</a></li>
-    <li class="breadcrumb-item active">Ticket Cancellation History</li>
-</ol>
+
 
 {% for t in all_tickets %}
 <div class="container">

@@ -4,14 +4,11 @@
 {% block title %} PNR Status {% endblock %}
 {% block navbar-pnr-status %}class="active"{% endblock %}
 
-{% block banner %} main-banner inner {% endblock %}
+
 
 {% block content %}
 
-<ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
-    <li class="breadcrumb-item active">PNR Status</li>
-</ol>
+
 
 <!-- pnr status form -->
 <div class="section text-center py-5">
@@ -34,15 +31,17 @@
                         <div class="form-group">
                             <div class="container">
                                 <div class="row">
-                                    <label class="col-md-4 col-sm-4 col-xs-4 control-label pr-5"><b>PNR Number:</b></label>
-                                    <div class="col-md-4 col-sm-4 col-xs-4">
-                                        <input type="text" class="form-control" name="pnr" placeholder="Enter PNR Number" required="" value="{% if pnr %}{{ pnr }}{% endif %}">
-                                    </div>
+
+
                                     <!-- Button -->
-                                    <div class="col-md-4 col-sm-4 col-xs-4 controls">
-                                        <button type="submit" id="btn-pnr" class="btn active float-left">Get Status</button>
-                                    </div>
+                         
                                 </div>
+                                <!-- <div class="col-md-8 col-sm-4 col-xs-4"> -->
+                                    <input type="text" class="form-control ml-4 mt-4" name="pnr" placeholder="Enter PNR Number" required="" value="{% if pnr %}{{ pnr }}{% endif %}">
+                                <!-- </div> -->
+                       
+                                    <button type="submit" id="btn-pnr" class="btn active  ml-4 mt-4">Check Status</button>
+                  
                             </div>
                         </div>
                     </form>

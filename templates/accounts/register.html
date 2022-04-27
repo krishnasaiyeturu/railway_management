@@ -3,26 +3,18 @@
 {% block title %} Register {% endblock %}
 {% block navbar-register %}class="active"{% endblock %}
 
-{% block banner %} main-banner inner {% endblock %}
 
 {% block content %}
 
-<ol class="breadcrumb grey">
-    <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
-    <li class="breadcrumb-item active">Register</li>
-</ol>
 
 <!-- login and register form -->
 <div class="register-form section text-center py-5">
     <div class="container">
-        <div class="ban-buttons">
-            <a href="{% url 'login' %}" class="btn">Login</a>
-            <a href="{% url 'register' %}" class="btn active">Register</a>
-        </div>
+
         <div id="signupbox" style=" margin-top:50px" class="mainbox registerbox">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <div class="panel-title">Register</div>
+                    <h1>Sign up</h1>
                 </div>
                 <div class="panel-body">
                     <form id="signupform" class="form-horizontal" action="" method="post">
@@ -105,7 +97,7 @@
                         <div class="form-group">
                             <!-- Button -->
                             <div class="col-sm-12 controls">
-                                <button type="submit" id="btn-register" class="btn active" style="margin-top: 20px;">Register</button>
+                                <button type="submit" id="btn-register" class="btn active" style="margin-top: 20px;">Sign up</button>
                             </div>
                         </div>
                     </form>

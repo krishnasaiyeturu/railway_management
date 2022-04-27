@@ -6,15 +6,9 @@
 {% block navbar-booked-history %}class="inactive"{% endblock %}
 {% block navbar-cancellation-history %}class="inactive"{% endblock %}
 
-{% block banner %} main-banner inner {% endblock %}
 {% load static %}
 {% block content %}
 
-<ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
-    <li class="breadcrumb-item active"><a href="{% url 'transactions' %}">My Transactions</a></li>
-    <li class="breadcrumb-item active">Last Transaction Detail</li>
-</ol>
 
 <div class="section text-center py-5">
     <div class="container" style="padding-left: 10%; padding-right: 10%; padding-bottom: 1%;">
