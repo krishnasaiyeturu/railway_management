@@ -85,6 +85,7 @@ header {
     position: absolute;
     z-index: 9;
     width: 100%;
+    background-color: grey;
 }
 
 .toggle,
@@ -105,7 +106,7 @@ nav {
     display: initial;
     margin: 0;
     letter-spacing: 1px;
-    color: #fff;
+    color: black;
     font-size: 1em;
     font-weight: 700;
     text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
@@ -150,7 +151,7 @@ nav ul li {
     padding-left: 0;
     padding-right: 0;
     padding: 10px 0;
-    color: #fff;
+    color: black;
     text-transform: uppercase;
     -webkit-transition: 0.5s all ease;
     -moz-transition: 0.5s all ease;
@@ -173,11 +174,11 @@ nav ul li {
 /* Background color change on Hover */
 
 nav .menu li a:hover {
-    color: #10adfb;
+    color: white;
 }
 
 .menu li.active a {
-    color: #10adfb;
+    color: white;
 }
 
 /* Hide Dropdowns by Default
@@ -382,7 +383,7 @@ li > a:only-child:after {
 /*--/banner --*/
 
 .main-banner {
-    background: url(../images/bg1.jpg)no-repeat center;
+    /* background: url(../images/bg1.jpg)no-repeat center; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -393,7 +394,7 @@ li > a:only-child:after {
 }
 
 .main-banner.inner {
-    background: url(../images/bg1_small.jpg)no-repeat center;
+    /* background: url(../images/bg1_small.jpg)no-repeat center; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -492,13 +493,13 @@ li > a:only-child:after {
 }
 
 a.btn.active, button.btn.active {
-    background: #10adfb;
+    background: gray;
     color: #fff;
-    border: #10adfb;
+    border: gray;
 }
 
 a.btn.active.bluebtn:hover, button.btn.active.bluebtn:hover {
-    background: #0e9be1;
+    background: gray;
 }
 
 /*-- //place holder --*/
@@ -1490,9 +1491,8 @@ a.move-top span {
 }
 
 .panel-info>.panel-heading {
-    color: #ffffff;
-    background-color: #272525;
-    border-color: #272525;
+    color: black;
+
     padding: 15px;
     letter-spacing: 1px;
     font-weight: 600;
@@ -1518,7 +1518,7 @@ button#btn-pnr, button#btn-train-schedule, button#btn-train-search {
 }
 
 button#btn-login:hover, button#btn-register:hover, button#btn-pnr:hover, button#btn-train-schedule:hover, button#btn-train-search:hover {
-    background: #0e9be1;
+    background: grey;
     color: white;   
 }
 
@@ -1539,7 +1539,7 @@ button#btn-signup {
 
 .panel-body {
     padding: 35px;
-    background-color: white;
+    /* background-color: white; */
 }
 
 .fpassword {
