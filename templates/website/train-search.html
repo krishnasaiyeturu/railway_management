@@ -36,14 +36,29 @@
                                     <div class="col-md-1 col-sm-1 col-xs-1"></div>
                                     <label class="col-md-4 col-sm-4 col-xs-4 control-label pr-5"><b>Source Station:</b></label>
                                     <div class="col-md-4 col-sm-4 col-xs-4">
-                                        <input type="text" class="form-control" name="source" placeholder="Enter Source Station Name" required="">
+                                        <select class="form-control" name="source" id="" required="">
+                                            <option value="">Select Source Station</option>
+                                            {% for s in stations %}
+                                            <option value="{{s.station_code}}">{{s}}</option>
+                                            {% endfor %}
+                                        </select>
+
+                                        <!-- <input type="text" class="form-control" name="source" placeholder="Enter Source Station Name" required=""> -->
+
                                     </div>
                                 </div>
                                 <div class="row mt-2">
                                     <div class="col-md-1 col-sm-1 col-xs-1"></div>
                                     <label class="col-md-4 col-sm-4 col-xs-4 control-label pr-5"><b>Destination Station:</b></label>
                                     <div class="col-md-4 col-sm-4 col-xs-4">
-                                        <input type="text" class="form-control" name="destination" placeholder="Enter Destination Station Name" required="">
+                                        <!-- <input type="text" class="form-control" name="" placeholder="Enter Destination Station Name" required=""> -->
+                                    
+                                        <select class="form-control" name="destination" id="" required="">
+                                            <option value="">Select Destination Station</option>
+                                            {% for s in stations %}
+                                            <option value="{{s.station_code}}">{{s}}</option>
+                                            {% endfor %}
+                                        </select>
                                     </div>
                                 </div>
                                 
