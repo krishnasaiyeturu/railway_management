@@ -8,11 +8,11 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 import requests
 import json
-from instamojo_wrapper import Instamojo
+# from instamojo_wrapper import Instamojo
 
-API_KEY = 'test_530bc68fdd48fa14a39c6eedace'
-AUTH_TOKEN = 'test_d5d9765989bcfd08e2514acafb5'
-api = Instamojo(api_key=API_KEY, auth_token=AUTH_TOKEN, endpoint='https://test.instamojo.com/api/1.1/');
+# API_KEY = 'test_530bc68fdd48fa14a39c6eedace'
+# AUTH_TOKEN = 'test_d5d9765989bcfd08e2514acafb5'
+# api = Instamojo(api_key=API_KEY, auth_token=AUTH_TOKEN, endpoint='https://test.instamojo.com/api/1.1/');
 
 
 # 650a90b2c2af21576c724aa9582480e9
@@ -95,6 +95,8 @@ def train_enquiry(request):
 
 
 def train_schedule(request):
+    # print(Station.objects.all())
+    # context['stations'] = 
     context = {'is_submit': False}
     if request.method == "POST":
         train_no = request.POST.get('train-no')
@@ -115,10 +117,12 @@ def train_schedule(request):
 
 
 def train_search(request):
-    context = {"is_submit": False}
+    context = {"is_submit": False,'stations':Station.objects.all()}
     if request.method == "POST":
         source = request.POST.get("source")
         destination = request.POST.get("destination")
+
+        print(source,destination,"------------------>")
 
         with connection.cursor() as cursor:
             cursor.execute(f"SELECT T1.train_id, T1.day FROM website_trainschedule as T1, website_trainschedule as T2 WHERE T1.station_id='{source}' AND T2.station_id='{destination}' AND T1.distance < T2.distance AND T1.train_id=T2.train_id")
@@ -159,7 +163,7 @@ def train_search(request):
 
 @login_required
 def book_ticket(request):
-    context = {"is_submit": False, "flexible":False}
+    context = {"is_submit": False, "flexible":False,'stations':Station.objects.all()}
 
 
     if request.method == "POST":
