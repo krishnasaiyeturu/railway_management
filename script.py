@@ -99,7 +99,7 @@ create_station('BVC','BHAVNAGAR TRMUS')
 create_station('LTT','LOKMANYA TILAK')
 
 d = ['2022-04-28', '2022-04-29']
-for i in range(1,32):
+for i in range(1,29):
     if (i<10):
         s='2022-04-0'+str(i)
     else:
